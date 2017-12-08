@@ -15,14 +15,17 @@ export default class GuildInfo extends Component{
     }
 
     componentDidMount(){
-         
+         axios.get('/guild/members').then(res => {
+             this.setState({ members: res.data.members.length})
+         })
+         .catch(err => console.log(err))
     }
 
     render(){
         return(
             <div>
             <h1>{this.state.name}</h1>
-            <h1>{this.state.members}</h1>
+            <h1>{this.state.members} Members</h1>
             </div>
         )
     }

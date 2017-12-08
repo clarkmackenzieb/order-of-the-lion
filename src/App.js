@@ -11,7 +11,7 @@ import Calendar from './Components/calendar/calendar'
 // import GuildNews from './Components/guildNews/guildNews'
 import Members from './Components/members/members'
 // import Character from './Components/members/character/character'
-// import Navbar from './Components/navbar/navbar'
+import Navbar from './Components/navbar/navbar'
 // import argusTrinketCheck from './Components/raid/argusTrinketCheck/argusTrinketCheck'
 // import Boss from './Components/raid/boss/boss'
 // import Loot from './Components/raid/loot/loot'
@@ -32,6 +32,7 @@ export default class App extends Component {
   render() {
     return (
   <div>
+  <Navbar/>
   <Router>
       <Switch>
           <Route component = { Members } path="/members"/>

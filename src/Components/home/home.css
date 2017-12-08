@@ -1,0 +1,15 @@
+.home-main-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.home-left-container{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0px;
+
+}
+
+.home-right-container{
+
+}
