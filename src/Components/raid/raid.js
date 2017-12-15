@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 
 export default class Raid extends Component{
@@ -13,16 +13,15 @@ export default class Raid extends Component{
 
     componentDidMount(){
         axios.get('/antorus/bosses').then(res => {
-            console.log(res.data)
             this.setState({ bosses: res.data})
         })
     }
 
     render(){
         return(<div>
-            {this.state.bosses.map(boss => {
+            {this.state.bosses.map((boss, i) => {
                 return(
-                <h1>{boss.name}</h1>
+                <Link key={i} to={`/raid/boss/${boss.id}`}><h1>{boss.name}</h1></Link>
                 )
             })}
             </div>

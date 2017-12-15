@@ -49,94 +49,19 @@ export default class Members extends Component{
    }
 
     render(){
-        let membersDisplay;
-        switch(this.state.page){
-            case 1:
-            membersDisplay = this.state.members1.map(member => {
-                return(
-                    <div>
-                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
-                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
-                    </div>
-                        )
-                })
-            break;
-            case 2:
-            membersDisplay = this.state.members2.map(member => {
-                return(
-                    <div>
-                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
-                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
-                    </div>
-                        )
-                })
-            break;
-            case 3:
-            membersDisplay = this.state.members3.map(member => {
-                return(
-                    <div>
-                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
-                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
-                    </div>
-                        )
-                })
-            break;
-            case 4:
-            membersDisplay = this.state.members4.map(member => {
-                return(
-                    <div>
-                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
-                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
-                    </div>
-                        )
-                })
-            break;
-            case 5:
-            membersDisplay = this.state.members5.map(member => {
-                return(
-                    <div>
-                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
-                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
-                    </div>
-                        )
-                })
-            break;
-            case 6:
-            membersDisplay = this.state.members6.map(member => {
-                return(
-                    <div>
-                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
-                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
-                    </div>
-                        )
-                })
-            break;
-            case 7:
-            membersDisplay = this.state.members7.map(member => {
-                return(
-                    <div>
-                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
-                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
-                    </div>
-                        )
-                })
-            break;
-            case 8:
-            membersDisplay = this.state.members8.map(member => {
-                return(
-                    <div>
-                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
-                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
-                    </div>
-                        )
-                })
-            break;
-
-                }
+        
+                
         
         return(
             <div>
-                {membersDisplay}
+                {this.state[`members${this.state.page}`].map((member, i) => {
+                return(
+                    <Link key={i} to={`/members/${member.character.name}`}><div>
+                        <img alt="character profile" src={"https://render-us.worldofwarcraft.com/character/"+member.character.thumbnail}/>
+                        <p>{member.character.name}, Level {member.character.level}, Rank: {member.rank}</p>
+                    </div></Link>
+                        )
+                })}
                 <div>
                     <button onClick={(e) => {this.handleChange(1)}}>1</button>
                     <button onClick={(e) => {this.handleChange(2)}}>2</button>

@@ -1,5 +1,5 @@
 const axios = require('axios')
-const {bnetKey} = require('../config')
+const {bnetKey} = require('../server/config')
 
 
 const getMembers = (req,res) => {

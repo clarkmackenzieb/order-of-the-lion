@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 import axios from 'axios';
 import GuildInfo from './Components/guildInfo/guildInfo'
-import { Switch, Route, BrowserRouter as Router } from 'react-router-dom';
-
+import { BrowserRouter as Router } from 'react-router-dom';
+import routes from './routes';
 // import components
 import Calendar from './Components/calendar/calendar'
 // import GuildInfo from './Components/guildInfo/guildInfo'
@@ -34,12 +34,7 @@ export default class App extends Component {
   <div>
   <Navbar/>
   <Router>
-      <Switch>
-          <Route component = { Members } path="/members"/>
-          <Route component = { Calendar } path="/calendar"/>
-          <Route component = { Raid } path="/raid"/>
-          <Route component = { Home } exact path="/"/>
-      </Switch>
+      {routes}
     </Router>
   </div>
     )

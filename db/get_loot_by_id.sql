@@ -1,0 +1,1 @@
+SELECT * FROM antorus_boss_loot WHERE boss_id = $1;
